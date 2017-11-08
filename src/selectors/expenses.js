@@ -20,3 +20,22 @@ export default (expenses, { text, sortBy, startDate, endDate }) => {
     }
   });
 };
+
+export const toSum = (expenses) => {
+    let sum = 0;
+    // for(let item of expenses){
+    //     sum += item.amount;
+    // }
+    if(expenses.length===0){
+        return sum = 0;
+    }else{
+        return sum =expenses.map((expense)=>{
+            return expense.amount
+        }).reduce((sum,value)=>{
+            return sum+value
+        },0);
+    }
+};
+
+
+
